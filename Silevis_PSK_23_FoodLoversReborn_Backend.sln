@@ -1,6 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silevis_PSK_23_FoodLoversReborn_Backend", "Silevis_PSK_23_FoodLoversReborn_Backend.csproj", "{D24D3EBE-C017-410B-AE4B-606DCAD5A3F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silevis_PSK_23_FoodLoversReborn_Backend.Domain", "src\Silevis_PSK_23_FoodLoversReborn_Backend.Domain\Silevis_PSK_23_FoodLoversReborn_Backend.Domain.csproj", "{C699A285-EB69-49C0-AD3B-95F8D7EDCA4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silevis_PSK_23_FoodLoversReborn_Backend.Application", "src\Silevis_PSK_23_FoodLoversReborn_Backend.Application\Silevis_PSK_23_FoodLoversReborn_Backend.Application.csproj", "{02C6A77C-6A11-4EB5-91CF-9C671532B2C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure", "src\Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure\Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.csproj", "{0926D889-302E-40ED-BDFC-D58A39F46883}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silevis_PSK_23_FoodLoversReborn_Backend.API", "src\Silevis_PSK_23_FoodLoversReborn_Backend.API\Silevis_PSK_23_FoodLoversReborn_Backend.API.csproj", "{037DB5F9-9963-4B11-A48A-1A0178A41BC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +14,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D24D3EBE-C017-410B-AE4B-606DCAD5A3F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D24D3EBE-C017-410B-AE4B-606DCAD5A3F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D24D3EBE-C017-410B-AE4B-606DCAD5A3F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D24D3EBE-C017-410B-AE4B-606DCAD5A3F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C699A285-EB69-49C0-AD3B-95F8D7EDCA4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C699A285-EB69-49C0-AD3B-95F8D7EDCA4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C699A285-EB69-49C0-AD3B-95F8D7EDCA4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C699A285-EB69-49C0-AD3B-95F8D7EDCA4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02C6A77C-6A11-4EB5-91CF-9C671532B2C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02C6A77C-6A11-4EB5-91CF-9C671532B2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02C6A77C-6A11-4EB5-91CF-9C671532B2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02C6A77C-6A11-4EB5-91CF-9C671532B2C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0926D889-302E-40ED-BDFC-D58A39F46883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0926D889-302E-40ED-BDFC-D58A39F46883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0926D889-302E-40ED-BDFC-D58A39F46883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0926D889-302E-40ED-BDFC-D58A39F46883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{037DB5F9-9963-4B11-A48A-1A0178A41BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{037DB5F9-9963-4B11-A48A-1A0178A41BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{037DB5F9-9963-4B11-A48A-1A0178A41BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{037DB5F9-9963-4B11-A48A-1A0178A41BC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
