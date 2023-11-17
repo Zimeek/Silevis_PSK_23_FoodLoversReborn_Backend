@@ -10,6 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.SetupApplicationDbContext(builder.Configuration);
+builder.Services.SetupMediatR();
 
 var app = builder.Build();
 
