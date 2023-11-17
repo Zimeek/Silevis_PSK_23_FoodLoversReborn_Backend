@@ -7,6 +7,7 @@ public record InternshipOfferDto
     public Guid Id { get; init; }
     public ProgrammeTypeEnum ProgrammeTypeEnum { get; init; }
     public string CompanyName { get; init; }
+    public string Address { get; init; }
     public string Title { get; init; }
     public DateTime CreationDate { get; init;}
     public DateTime DateStart { get; init;}
