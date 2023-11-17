@@ -8,6 +8,7 @@ public class InternshipDelayRequest : BaseEntity
     public required Guid StudentId { get; init; }
     public required DateTime RequestedDateStart { get; init; }
     public required DateTime RequestedDateEnd { get; init; }
+    public bool? Approved { get; private set; }
 
     public InternshipDelayRequest(
         Guid internshipOfferId,
@@ -19,6 +20,11 @@ public class InternshipDelayRequest : BaseEntity
         StudentId = studentId;
         RequestedDateStart = requestedDateStart;
         RequestedDateEnd = requestedDateEnd;
+    }
+
+    public void SetApproved(bool approved)
+    {
+        Approved = approved;
     }
     
 }
