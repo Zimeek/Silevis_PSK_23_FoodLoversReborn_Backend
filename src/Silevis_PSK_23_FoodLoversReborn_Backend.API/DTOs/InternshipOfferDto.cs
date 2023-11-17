@@ -7,16 +7,18 @@ public record InternshipOfferDto
     public Guid Id { get; init; }
     public ProgrammeTypeEnum ProgrammeTypeEnum { get; init; }
     public string CompanyName { get; init; }
-    public string Address { get; init; }
+    public string? CompanyAddress { get; init; }
+    public int? CompanyPhone { get; init; }
     public string Title { get; init; }
     public DateTime CreationDate { get; init;}
     public DateTime DateStart { get; init;}
     public DateTime DateEnd { get; init;}
     public TimeOnly ShiftStart { get; init;}
     public TimeOnly ShiftEnd { get; init;}
+    public DateTime Deadline { get; init; }
     public int AvailableSlots { get; init;}
     public int TotalSlots { get; init; }
-    public bool HasSlots => (AvailableSlots > TotalSlots);
+    public bool HasSlots => (AvailableSlots < 0);
 }
 
 
