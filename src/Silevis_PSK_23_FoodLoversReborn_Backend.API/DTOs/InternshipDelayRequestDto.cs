@@ -7,4 +7,5 @@ public record InternshipDelayRequestDto
     public Guid InternshipOfferId { get; init; }
     public DateTime RequestedDateStart { get; init; }
     public DateTime RequestedDateEnd { get; init; }
+    public bool? Approved { get; init; }
 }
