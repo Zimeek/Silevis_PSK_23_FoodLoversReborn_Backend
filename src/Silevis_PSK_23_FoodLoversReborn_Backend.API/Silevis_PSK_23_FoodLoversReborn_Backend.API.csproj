@@ -11,4 +11,9 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Silevis_PSK_23_FoodLoversReborn_Backend.Application\Silevis_PSK_23_FoodLoversReborn_Backend.Application.csproj" />
+      <ProjectReference Include="..\Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure\Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>
