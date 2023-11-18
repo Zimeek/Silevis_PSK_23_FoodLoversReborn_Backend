@@ -48,21 +48,42 @@ namespace Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.Migrations
                     b.Property<bool?>("Approved")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("InternshipOfferId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("RequestedDateEnd")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("RequestedDateStart")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("StudentId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("InternshipDelayRequest");
+                    b.ToTable("InternshipDelayRequests");
+                });
+
+            modelBuilder.Entity("Silevis_PSK_23_FoodLoversReborn_Backend.Domain.Entities.StudentDocument", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("AlbumNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DocumentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("StudentDocuments");
                 });
 
             modelBuilder.Entity("Silevis_PSK_23_FoodLoversReborn_Backend.Domain.Entities.Internship", b =>
