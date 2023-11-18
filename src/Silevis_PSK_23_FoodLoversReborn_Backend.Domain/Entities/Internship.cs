@@ -6,7 +6,7 @@ namespace Silevis_PSK_23_FoodLoversReborn_Backend.Domain.Entities;
 public class Internship : BaseEntity
 {
     public int StudentId { get; init; }
-    public bool? Passed { get; private set; }
+    public int? Passed { get; private set; } = 0;
     public InternshipDetails? InternshipDetails { get; private set; }
 
     public Internship(
@@ -17,7 +17,7 @@ public class Internship : BaseEntity
 
     public void SetPassed(bool passed)
     {
-        Passed = passed;
+        Passed = passed ? 1 : 2;
     }
 
     public void SetDetails(

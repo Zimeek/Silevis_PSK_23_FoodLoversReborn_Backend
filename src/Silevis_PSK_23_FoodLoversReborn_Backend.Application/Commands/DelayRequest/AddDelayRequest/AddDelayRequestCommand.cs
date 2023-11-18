@@ -6,7 +6,6 @@ public sealed record AddDelayRequestCommand(
     Guid Id,
     int StudentId,
     DateTime RequestedDateStart,
-    DateTime RequestedDateEnd,
-    bool? Approved
+    DateTime RequestedDateEnd
     ) : IRequest<AddDelayRequestCommandResponse>
 { }

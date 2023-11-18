@@ -23,8 +23,6 @@ public class ApplicationDbContext : DbContext
     }
     */
     
-    
-    
     public DbSet<Internship> Internships { get; set; }
     public DbSet<InternshipDelayRequest> InternshipDelayRequests { get; set; }
     public DbSet<StudentDocument> StudentDocuments { get; set; }

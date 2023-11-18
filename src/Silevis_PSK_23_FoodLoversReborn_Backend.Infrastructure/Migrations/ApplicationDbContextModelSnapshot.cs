@@ -28,8 +28,8 @@ namespace Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool?>("Passed")
-                        .HasColumnType("bit");
+                    b.Property<int?>("Passed")
+                        .HasColumnType("int");
 
                     b.Property<int>("StudentId")
                         .HasColumnType("int");
@@ -45,8 +45,8 @@ namespace Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool?>("Approved")
-                        .HasColumnType("bit");
+                    b.Property<int?>("Approved")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("RequestedDateEnd")
                         .HasColumnType("datetime2");

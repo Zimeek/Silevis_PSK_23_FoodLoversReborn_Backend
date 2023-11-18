@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.Internship;
+using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.SetInternshipStatus;
 using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Queries;
 using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Queries.GetInternships;
 
@@ -54,6 +55,13 @@ public class InternshipController : ControllerBase
     {
         await _mediator.Send(request);
         return Ok();
+    }
+
+    [HttpPut("SetStatus")]
+    public async Task<IActionResult> SetStatus([FromBody] SetInternshipStatusCommand request)
+    {
+        var internship = await _mediator.Send(request);
+        return internship is null ? NotFound() : Ok(internship);
     }
     
     

@@ -8,7 +8,7 @@ public class InternshipDelayRequest
     public int StudentId { get; init; }
     public DateTime RequestedDateStart { get; init; }
     public DateTime RequestedDateEnd { get; init; }
-    public bool? Approved { get; set; }
+    public int? Approved { get; set; } = 0;
 
     public InternshipDelayRequest(
         Guid id,
@@ -24,7 +24,7 @@ public class InternshipDelayRequest
 
     public void SetApproved(bool approved)
     {
-        Approved = approved;
+        Approved = approved ? 1 : 2;
     }
     
 }
