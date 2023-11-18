@@ -1,6 +1,8 @@
-﻿using MediatR;
+﻿using System.Collections;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.StudentDocument.UploadDocument;
+using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Queries;
 
 namespace Silevis_PSK_23_FoodLoversReborn_Backend.API.Controllers;
 
@@ -49,9 +51,9 @@ public class DocumentsController : ControllerBase
     }
     
     [HttpGet("GetStatus")]
-    public async Task<IActionResult> GetStatus()
+    public async Task<ICollection<int>> GetStatus([FromQuery(Name = "studentId")] int studentId)
     {
-        return Ok();
+        return await _mediator.Send(new GetDocumentStatusQuery(studentId));
     }
     
 }
