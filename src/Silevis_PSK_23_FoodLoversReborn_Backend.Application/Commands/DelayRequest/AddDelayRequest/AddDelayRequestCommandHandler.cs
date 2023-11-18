@@ -3,7 +3,7 @@ using Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.DataAccess;
 
 namespace Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.DelayRequest;
 
-public class AddDelayRequestCommandHandler : IRequestHandler<AddDelayRequestCommand, AddDelayRequestCommandResponse>
+public sealed class AddDelayRequestCommandHandler : IRequestHandler<AddDelayRequestCommand, AddDelayRequestCommandResponse>
 {
     private readonly ApplicationDbContext _dbContext;
 

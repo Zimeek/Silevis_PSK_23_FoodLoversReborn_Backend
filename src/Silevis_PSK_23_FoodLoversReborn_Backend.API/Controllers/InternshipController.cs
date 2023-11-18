@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.Internship;
+using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Queries;
+using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Queries.GetInternships;
 
 namespace Silevis_PSK_23_FoodLoversReborn_Backend.API.Controllers;
 
@@ -22,14 +24,15 @@ public class InternshipController : ControllerBase
     [HttpGet("GetAll")]
     public async Task<IActionResult> GetAll()
     {
-        return null;
+        return Ok(await _mediator.Send(new GetInternshipsQuery()));
     }
 
     [HttpGet("GetById")]
-    public async Task<IActionResult> GetById([FromQuery(Name = "id")] Guid id)
+    public async Task<IActionResult> GetById([FromQuery] Guid id)
     {
-        Console.WriteLine(id);
-        return Ok();
+        var internship = await _mediator.Send(new GetInternshipQuery(id));
+
+        return internship is not null ? Ok(internship) : NotFound();
     }
     
     [HttpPost("Add")]

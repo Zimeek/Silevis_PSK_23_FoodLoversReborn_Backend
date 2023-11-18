@@ -3,7 +3,7 @@ using Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.DataAccess;
 
 namespace Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.Internship;
 
-public class AddInternshipCommandHandler : IRequestHandler<AddInternshipCommand, AddInternshipCommandResponse>
+public sealed class AddInternshipCommandHandler : IRequestHandler<AddInternshipCommand, AddInternshipCommandResponse>
 {
     private readonly ApplicationDbContext _dbContext;
 
@@ -23,7 +23,7 @@ public class AddInternshipCommandHandler : IRequestHandler<AddInternshipCommand,
             request.DateEnd,
             request.Month
         );
-
+        
         await _dbContext.AddAsync(internship, cancellationToken);
         await _dbContext.SaveChangesAsync(cancellationToken);
         
