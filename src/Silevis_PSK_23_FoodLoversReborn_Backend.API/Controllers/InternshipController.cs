@@ -36,7 +36,7 @@ public class InternshipController : ControllerBase
     }
     
     [HttpGet("GetByStudentId")]
-    public async Task<IActionResult> GetByStudentId([FromQuery] Guid id)
+    public async Task<IActionResult> GetByStudentId([FromQuery] int id)
     {
         var internship = await _mediator.Send(new GetInternshipByStudentIdQuery(id));
 

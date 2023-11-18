@@ -3,7 +3,7 @@
 namespace Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.Internship;
 
 public sealed record AddInternshipCommand(
-    Guid StudentId,
+    int StudentId,
     string CompanyName,
     string? CompanyAddress,
     string? CompanyPhone,

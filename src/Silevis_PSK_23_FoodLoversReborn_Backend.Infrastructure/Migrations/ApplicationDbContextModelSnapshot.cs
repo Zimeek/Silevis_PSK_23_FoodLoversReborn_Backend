@@ -31,8 +31,8 @@ namespace Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.Migrations
                     b.Property<bool?>("Passed")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("StudentId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

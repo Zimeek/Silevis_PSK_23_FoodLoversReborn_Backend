@@ -5,12 +5,12 @@ namespace Silevis_PSK_23_FoodLoversReborn_Backend.Domain.Entities;
 
 public class Internship : BaseEntity
 {
-    public Guid StudentId { get; init; }
+    public int StudentId { get; init; }
     public bool? Passed { get; private set; }
     public InternshipDetails? InternshipDetails { get; private set; }
 
     public Internship(
-        Guid studentId)
+        int studentId)
     {
         StudentId = studentId;
     }

@@ -1,4 +1,5 @@
 using Silevis_PSK_23_FoodLoversReborn_Backend.API.Extensions;
+using Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,12 +23,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseCors("_localorigin");
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var applicationDbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    await ApplicationDbContextSeeder.SeedAsync(applicationDbContext);
+}
 
 app.Run();

@@ -19,7 +19,7 @@ public class InternshipDetails : ValueObject
         DateTime dateEnd,
         int month)
     {
-        CompanyName = companyPhone;
+        CompanyName = companyName;
         CompanyAddress = companyAddress;
         CompanyPhone = companyPhone;
         DateStart = dateStart;
