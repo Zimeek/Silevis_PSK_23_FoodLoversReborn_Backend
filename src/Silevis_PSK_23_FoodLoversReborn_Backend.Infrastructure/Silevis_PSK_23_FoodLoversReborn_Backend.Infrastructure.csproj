@@ -6,9 +6,7 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Silevis_PSK_23_FoodLoversReborn_Backend.Application\Silevis_PSK_23_FoodLoversReborn_Backend.Application.csproj" />
-    </ItemGroup>
+    
 
     <ItemGroup>
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
@@ -22,6 +20,12 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+    </ItemGroup>
+
+    
+
+    <ItemGroup>
+      <ProjectReference Include="..\Silevis_PSK_23_FoodLoversReborn_Backend.Domain\Silevis_PSK_23_FoodLoversReborn_Backend.Domain.csproj" />
     </ItemGroup>
 
 </Project>

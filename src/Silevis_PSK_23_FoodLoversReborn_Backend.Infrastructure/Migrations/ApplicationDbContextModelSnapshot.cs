@@ -36,7 +36,7 @@ namespace Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("InternshipDetails", (string)null);
+                    b.ToTable("Internships", (string)null);
                 });
 
             modelBuilder.Entity("Silevis_PSK_23_FoodLoversReborn_Backend.Domain.Entities.InternshipDelayRequest", b =>
@@ -99,14 +99,13 @@ namespace Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.Migrations
 
                             b1.HasKey("InternshipId");
 
-                            b1.ToTable("InternshipDetails");
+                            b1.ToTable("InternshipDetails", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("InternshipId");
                         });
 
-                    b.Navigation("InternshipDetails")
-                        .IsRequired();
+                    b.Navigation("InternshipDetails");
                 });
 #pragma warning restore 612, 618
         }

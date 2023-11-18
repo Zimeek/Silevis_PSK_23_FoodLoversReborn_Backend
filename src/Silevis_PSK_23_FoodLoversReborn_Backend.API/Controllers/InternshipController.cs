@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Silevis_PSK_23_FoodLoversReborn_Backend.API.HttpRequests;
+using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.Internship;
 
 namespace Silevis_PSK_23_FoodLoversReborn_Backend.API.Controllers;
 
@@ -11,7 +11,9 @@ public class InternshipController : ControllerBase
     private readonly IConfiguration _configuration;
     private readonly IMediator _mediator;
     
-    public InternshipController(IConfiguration configuration, IMediator mediator)
+    public InternshipController(
+        IConfiguration configuration, 
+        IMediator mediator)
     {
         _configuration = configuration;
         _mediator = mediator;
@@ -31,9 +33,9 @@ public class InternshipController : ControllerBase
     }
     
     [HttpPost("Add")]
-    public async Task<IActionResult> Add([FromBody] InternshipAddHttpRequest request)
+    public async Task<AddInternshipCommandResponse> Add([FromBody] AddInternshipCommand request)
     {
-        return null;
+        return await _mediator.Send(request);
     }
     
     [HttpDelete("Delete")]

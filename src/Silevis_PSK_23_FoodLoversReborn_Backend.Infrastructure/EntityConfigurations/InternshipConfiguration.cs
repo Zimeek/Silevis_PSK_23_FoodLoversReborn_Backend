@@ -19,7 +19,8 @@ public class InternshipConfiguration : IEntityTypeConfiguration<Internship>
                 x.Property(p => p.DateStart).HasColumnName("DateStart");
                 x.Property(p => p.DateEnd).HasColumnName("DateEnd");
                 x.Property(p => p.Month).HasColumnName("Month");
+                x.ToTable("InternshipDetails");
             }
-        ).ToTable("InternshipDetails");
+        ).ToTable("Internships");
     }
 }

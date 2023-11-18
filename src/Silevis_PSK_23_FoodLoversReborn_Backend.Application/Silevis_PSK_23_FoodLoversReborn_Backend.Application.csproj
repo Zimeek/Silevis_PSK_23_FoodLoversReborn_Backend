@@ -8,6 +8,16 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Silevis_PSK_23_FoodLoversReborn_Backend.Domain\Silevis_PSK_23_FoodLoversReborn_Backend.Domain.csproj" />
+      <ProjectReference Include="..\Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure\Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.2.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Queries\" />
     </ItemGroup>
 
 </Project>

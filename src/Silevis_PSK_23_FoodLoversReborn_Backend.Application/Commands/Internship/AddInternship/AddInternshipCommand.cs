@@ -1,8 +1,10 @@
-﻿namespace Silevis_PSK_23_FoodLoversReborn_Backend.API.DTOs;
+﻿using MediatR;
 
-public record InternshipDetailsDto
+namespace Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.Internship;
+
+public record AddInternshipCommand : IRequest<AddInternshipCommandResponse>
 {
-    public Guid Id { get; init; }
+    public Guid StudentId { get; init; }
     public string CompanyName { get; init; }
     public string? CompanyAddress { get; init; }
     public string? CompanyPhone { get; init; }  
