@@ -35,6 +35,14 @@ public class InternshipController : ControllerBase
         return internship is not null ? Ok(internship) : NotFound();
     }
     
+    [HttpGet("GetByStudentId")]
+    public async Task<IActionResult> GetByStudentId([FromQuery] Guid id)
+    {
+        var internship = await _mediator.Send(new GetInternshipByStudentIdQuery(id));
+
+        return internship is not null ? Ok(internship) : NotFound();
+    }
+    
     [HttpPost("Add")]
     public async Task<AddInternshipCommandResponse> Add([FromBody] AddInternshipCommand request)
     {

@@ -17,7 +17,7 @@ public sealed class UploadDocumentCommandHandler : IRequestHandler<UploadDocumen
     
     public async Task<Domain.Entities.StudentDocument> Handle(UploadDocumentCommand request, CancellationToken cancellationToken)
     {
-        var studentDirectory = $@"{_configuration.GetSection("Uploads").Value}\{request.AlbumNumber}";
+        var studentDirectory = $@"{_configuration.GetSection("FileUploadsDirectory").Value}\{request.AlbumNumber}";
         var fileDirectory = Path.Combine(Environment.CurrentDirectory, studentDirectory);
         var fileName = $"{Path.GetRandomFileName()}.pdf";
         var fullFilePath = fileDirectory + $@"\{fileName}";

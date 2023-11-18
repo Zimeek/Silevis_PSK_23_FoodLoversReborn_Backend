@@ -15,13 +15,13 @@ public class ApplicationDbContext : DbContext
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
-    
+    /*
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
         // connect to sql server with connection string from app settings
         options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Silevis_PSK_23_FoodLoversReborn;Trusted_Connection=True;");
     }
-    
+    */
     
     
     
