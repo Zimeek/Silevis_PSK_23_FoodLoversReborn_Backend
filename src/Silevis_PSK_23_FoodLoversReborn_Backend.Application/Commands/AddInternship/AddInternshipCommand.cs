@@ -10,5 +10,5 @@ public sealed record AddInternshipCommand(
     DateTime DateStart,
     DateTime DateEnd,
     int Month
-    ) : IRequest<AddInternshipCommandResponse>
+    ) : IRequest<Guid>
 { }

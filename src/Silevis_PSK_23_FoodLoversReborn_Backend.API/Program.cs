@@ -1,4 +1,6 @@
+using FluentValidation;
 using Silevis_PSK_23_FoodLoversReborn_Backend.API.Extensions;
+using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.Internship;
 using Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.SetupApplicationDbContext(builder.Configuration);
 builder.Services.SetupMediatR();
 builder.Services.SetupCors();
+
+builder.Services.AddValidatorsFromAssemblyContaining<AddInternshipCommand>();
 
 var app = builder.Build();
 

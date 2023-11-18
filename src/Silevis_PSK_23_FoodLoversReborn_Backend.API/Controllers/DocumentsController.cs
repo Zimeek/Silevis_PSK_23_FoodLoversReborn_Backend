@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.StudentDocument.UploadDocument;
 using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Queries;
@@ -10,48 +9,24 @@ namespace Silevis_PSK_23_FoodLoversReborn_Backend.API.Controllers;
 [ApiController]
 public class DocumentsController : ControllerBase
 {
-    private readonly IConfiguration _configuration;
     private readonly IMediator _mediator;
     
-    public DocumentsController(IConfiguration configuration, IMediator mediator)
+    public DocumentsController(IMediator mediator)
     {
-        _configuration = configuration;
         _mediator = mediator;
     }
     
     [HttpPost("Upload")]
     public async Task<IActionResult> Upload([FromBody] UploadDocumentCommand request)
     {
-        await _mediator.Send(request);
+        var studentDocument = await _mediator.Send(request);
         
-        //return CreatedAtAction(nameof(Upload), new { id = studentDocument.Id },
-            //studentDocument);
-            return Ok();
-    }
-    
-    [HttpPost("Upload2")]
-    public async Task<IActionResult> Upload2(IFormFile formFile)
-    {
-        //await _mediator.Send(request);
-        using (MemoryStream ms = new MemoryStream())
-        {
-            formFile.OpenReadStream().CopyTo(ms);
-            Console.WriteLine(ms.ToArray());
-            await _mediator.Send(new UploadDocumentCommand(ms.ToArray(), 11, 11, 11));
-        }
-        
-        
-        
-        
-      
-        
-        //return CreatedAtAction(nameof(Upload), new { id = studentDocument.Id },
-        //studentDocument);
-        return Ok();
+        return CreatedAtAction(nameof(Upload), new { id = studentDocument.Id },
+            studentDocument);
     }
     
     [HttpGet("GetStatus")]
-    public async Task<ICollection<int>> GetStatus([FromQuery(Name = "studentId")] int studentId)
+    public async Task<ICollection<int>> GetStatus([FromQuery] int studentId)
     {
         return await _mediator.Send(new GetDocumentStatusQuery(studentId));
     }

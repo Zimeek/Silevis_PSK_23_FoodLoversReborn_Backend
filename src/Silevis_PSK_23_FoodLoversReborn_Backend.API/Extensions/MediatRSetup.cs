@@ -1,5 +1,6 @@
-﻿namespace Silevis_PSK_23_FoodLoversReborn_Backend.API.Extensions;
-using Silevis_PSK_23_FoodLoversReborn_Backend.Application;
+﻿using Silevis_PSK_23_FoodLoversReborn_Backend.Application;
+
+namespace Silevis_PSK_23_FoodLoversReborn_Backend.API.Extensions;
 
 public static class MediatRSetup
 {

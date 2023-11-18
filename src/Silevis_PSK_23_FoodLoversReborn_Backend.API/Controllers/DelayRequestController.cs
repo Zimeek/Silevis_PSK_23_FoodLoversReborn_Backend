@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.DelayRequest;
-using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.Internship;
 using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Queries;
 
 namespace Silevis_PSK_23_FoodLoversReborn_Backend.API.Controllers;
@@ -10,12 +9,10 @@ namespace Silevis_PSK_23_FoodLoversReborn_Backend.API.Controllers;
 [ApiController]
 public class DelayRequestController : ControllerBase
 {
-    private readonly IConfiguration _configuration;
     private readonly IMediator _mediator;
     
-    public DelayRequestController(IConfiguration configuration, IMediator mediator)
+    public DelayRequestController(IMediator mediator)
     {
-        _configuration = configuration;
         _mediator = mediator;
     }
     
@@ -32,7 +29,7 @@ public class DelayRequestController : ControllerBase
     }
     
     [HttpGet("GetById")]
-    public async Task<IActionResult> GetById([FromQuery(Name = "id")] Guid id)
+    public async Task<IActionResult> GetById([FromQuery] Guid id)
     {
         var delayRequest = await _mediator.Send(new GetDelayRequestQuery(id));
 

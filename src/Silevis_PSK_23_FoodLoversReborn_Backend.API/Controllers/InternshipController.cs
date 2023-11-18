@@ -45,7 +45,7 @@ public class InternshipController : ControllerBase
     }
     
     [HttpPost("Add")]
-    public async Task<AddInternshipCommandResponse> Add([FromBody] AddInternshipCommand request)
+    public async Task<Guid> Add([FromBody] AddInternshipCommand request)
     {
         return await _mediator.Send(request);
     }
