@@ -26,4 +26,5 @@ public class ApplicationDbContext : DbContext
     
     
     public DbSet<Internship> Internships { get; set; }
+    public DbSet<InternshipDelayRequest> InternshipDelayRequests { get; set; }
 }

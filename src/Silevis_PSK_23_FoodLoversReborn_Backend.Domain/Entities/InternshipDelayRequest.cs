@@ -2,21 +2,21 @@
 
 namespace Silevis_PSK_23_FoodLoversReborn_Backend.Domain.Entities;
 
-public class InternshipDelayRequest : BaseEntity
+public class InternshipDelayRequest
 {
-    public required Guid InternshipOfferId { get; init; }
-    public required Guid StudentId { get; init; }
-    public required DateTime RequestedDateStart { get; init; }
-    public required DateTime RequestedDateEnd { get; init; }
-    public bool? Approved { get; private set; }
+    public Guid Id { get; init; }
+    public int StudentId { get; init; }
+    public DateTime RequestedDateStart { get; init; }
+    public DateTime RequestedDateEnd { get; init; }
+    public bool? Approved { get; set; }
 
     public InternshipDelayRequest(
-        Guid internshipOfferId,
-        Guid studentId,
+        Guid id,
+        int studentId,
         DateTime requestedDateStart,
         DateTime requestedDateEnd)
     {
-        InternshipOfferId = internshipOfferId;
+        Id = id;
         StudentId = studentId;
         RequestedDateStart = requestedDateStart;
         RequestedDateEnd = requestedDateEnd;
