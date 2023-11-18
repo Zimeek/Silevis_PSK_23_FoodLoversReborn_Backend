@@ -18,7 +18,7 @@ public sealed class GetInternshipByStudentIdQueryHandler : IRequestHandler<GetIn
     {
         var internship = await _dbContext.Internships
             .AsNoTracking()
-            .FirstOrDefaultAsync(x => x.Id.Equals(request.Id), cancellationToken);
+            .FirstOrDefaultAsync(x => x.StudentId.Equals(request.Id), cancellationToken);
 
         return internship;
     }
