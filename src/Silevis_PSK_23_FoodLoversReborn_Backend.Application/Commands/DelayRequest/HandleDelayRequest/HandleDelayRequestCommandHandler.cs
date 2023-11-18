@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Silevis_PSK_23_FoodLoversReborn_Backend.Domain.Entities;
 using Silevis_PSK_23_FoodLoversReborn_Backend.Infrastructure.DataAccess;
 
 namespace Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.DelayRequest;

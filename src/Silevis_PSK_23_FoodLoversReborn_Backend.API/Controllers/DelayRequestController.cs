@@ -1,5 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.DelayRequest;
+using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Commands.Internship;
+using Silevis_PSK_23_FoodLoversReborn_Backend.Application.Queries;
 
 namespace Silevis_PSK_23_FoodLoversReborn_Backend.API.Controllers;
 
@@ -17,26 +20,30 @@ public class DelayRequestController : ControllerBase
     }
     
     [HttpPost("Add")]
-    public async Task<bool> Add([FromQuery(Name = "id")] Guid id)
+    public async Task<AddDelayRequestCommandResponse> Add([FromBody] AddDelayRequestCommand request)
     {
-        return true;
+        return await _mediator.Send(request);
     }
     
     [HttpGet("GetAll")]
     public async Task<IActionResult> GetAll()
     {
-        return null;
+        return Ok(await _mediator.Send(new GetDelayRequestsQuery()));
     }
+    
     [HttpGet("GetById")]
     public async Task<IActionResult> GetById([FromQuery(Name = "id")] Guid id)
     {
-        return null;
+        var delayRequest = await _mediator.Send(new GetDelayRequestQuery(id));
+
+        return delayRequest is not null ? Ok(delayRequest) : NotFound();
     }
     
     [HttpPost("Handle")]
-    public async Task<IActionResult> Add([FromQuery(Name = "id")] Guid id, [FromQuery(Name = "approved")] bool approved)
+    public async Task<IActionResult> Add([FromBody] HandleDelayRequestCommand request)
     {
-        return null;
+        await _mediator.Send(request);
+        return Ok();
     }
     
     

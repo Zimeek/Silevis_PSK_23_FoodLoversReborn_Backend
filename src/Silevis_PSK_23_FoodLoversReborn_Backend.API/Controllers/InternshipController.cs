@@ -50,9 +50,10 @@ public class InternshipController : ControllerBase
     }
     
     [HttpDelete("Delete")]
-    public async Task<IActionResult> Delete([FromQuery(Name = "id")] Guid id)
+    public async Task<IActionResult> Delete([FromBody] DeleteInternshipCommand request)
     {
-        return null;
+        await _mediator.Send(request);
+        return Ok();
     }
     
     
